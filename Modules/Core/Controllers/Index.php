@@ -3,7 +3,7 @@
 /**
  * Description of Index
  *
- * @author Noondreams.com <web@noondreams.com>
+ * 
  */
 class Index
 {

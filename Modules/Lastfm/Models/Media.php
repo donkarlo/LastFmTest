@@ -10,17 +10,17 @@ namespace Modules\Lastfm\Models;
  */
 class Media {
 
-    /** Name of this medium.
+    /** 
+     * Name of this medium.
      *
      * @var string
-     * @access	private
      */
     private $name;
 
-    /** Possible image sizes.
+    /** 
+     * Possible image sizes.
      *
      * @var integer
-     * @access	public
      */
     const IMAGE_UNKNOWN = -1;
     const IMAGE_SMALL = 0;
@@ -30,7 +30,8 @@ class Media {
     const IMAGE_EXTRALARGE = 4;
     const IMAGE_ORIGINAL = 5;
 
-    /** Create a media object.
+    /** 
+     * Create a media object.
      *
      * @param string $name Name for this medium.
      * @param array $images An array of images of different sizes.
@@ -42,20 +43,20 @@ class Media {
         $this->images = $images;
     }
 
-    /** Returns the name of this medium.
+    /** 
+     * Returns the name of this medium.
      *
      * @return	string	The mediums name.
-     * @access	public
      */
     public function getName() {
         return $this->name;
     }
 
-    /** Returns an image URL of the specified size of this medium.
+    /** 
+     * Returns an image URL of the specified size of this medium.
      *
      * @param	integer	$size	Image size constant. (Optional)
      * @return	string			An image URL.
-     * @access	public
      */
     public function getImage($size = null) {
         if ($size !== null and array_key_exists($size, $this->images)) {

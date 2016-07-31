@@ -2,22 +2,28 @@
 namespace Modules\Lastfm\Models;
 use Modules\Lastfm\Models\Media;
 use Modules\Lastfm\Models\Util;
+/**
+ * Is responsiable to all related to tracks. 
+ */
 class Track extends Media {
 
-    /** The artist of this track.
+    /** 
+     * The artist of this track.
      *
      * @var mixed
      * @access	private
      */
     private $artist;
-    /** The tracks id.
+    /** 
+     * The tracks id.
      *
      * @var integer
      * @access	private
      */
     private $id;
 
-    /** Create an album object.
+    /** 
+     * Create an album object.
      *
      * @param mixed		$artist		An artist object or string
      * @param string	$name		Name of this track.
@@ -31,7 +37,8 @@ class Track extends Media {
         $this->id = $id;
     }
 
-    /** Returns the artist of this track.
+    /** 
+     * Returns the artist of this track.
      *
      * @return	mixed	An {@link de.felixbruns.lastfm.Artist Artist} object or the artists name.
      * @access	public
@@ -40,7 +47,8 @@ class Track extends Media {
         return $this->artist;
     }
 
-    /** Returns the ID of this track.
+    /** 
+     * Returns the ID of this track.
      *
      * @return	integer	The ID of this track.
      * @access	public
@@ -49,7 +57,8 @@ class Track extends Media {
         return $this->id;
     }
 
-    /** Create a Track object from a SimpleXMLElement.
+    /** 
+     * Create a Track object from a SimpleXMLElement.
      *
      * @param	SimpleXMLElement	$xml	A SimpleXMLElement.
      * @return	Track						A Track object.
@@ -57,8 +66,9 @@ class Track extends Media {
      * @static
      * @access	public
      * @internal
+     * @todo exception handeling and renaming
      */
-    public static function fromSimpleXMLElement(SimpleXMLElement $xml) {
+    public static function buildFromXml(\SimpleXMLElement $xml) {
         $images = array();
         if (count($xml->image) > 1) {
             foreach ($xml->image as $image) {

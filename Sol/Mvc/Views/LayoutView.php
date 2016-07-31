@@ -3,9 +3,7 @@
 namespace Sol\Mvc\Views ;
 
 /**
- * Description of LayoutView
- *
- * @author Noondreams.com <web@noondreams.com>
+ * A layout view is a view which is replaced in a Layout.
  */
 class LayoutView
 {
@@ -18,8 +16,20 @@ class LayoutView
         $this->vars[$name] = $val ;
     }
 
+    public function getCssPaths(){
+        return $this->cssPaths ;
+    }
+
+    public function getJsPaths(){
+        return $this->jsPaths ;
+    }
+
     public function addCss($cssPath){
         $this->cssPaths[] = $cssPath ;
+    }
+
+    public function addJs($jsPath){
+        $this->jsPaths[] = $jsPath ;
     }
 
     /**
@@ -54,7 +64,7 @@ class LayoutView
                 }
                 else {
                     $returnValue = NULL ;
-                    break;
+                    break ;
                 }
             }
         }

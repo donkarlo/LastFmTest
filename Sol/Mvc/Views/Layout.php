@@ -5,7 +5,7 @@ namespace Sol\Mvc\Views ;
 /**
  * Description of Layout
  *
- * @author Noondreams.com <web@noondreams.com>
+ * 
  */
 class Layout
 {
@@ -22,14 +22,31 @@ class Layout
     }
 
     function getCssPaths(){
+        if (is_array ($this->getViews ())) {
+            foreach ($this->getViews () as $view)
+                if (is_array ($view->getCssPaths ())) {
+                    foreach ($view->getCssPaths () as $cssPath) {
+                        $this->cssPaths[] = $cssPath ;
+                    }
+                }
+        }
         return $this->cssPaths ;
     }
 
     function getJsPaths(){
+        if (is_array ($this->getViews ())) {
+            foreach ($this->getViews () as $view)
+                if (is_array ($view->getJsPaths ())) {
+                    foreach ($view->getJsPaths () as $jsPath) {
+                        $this->jsPaths[] = $jsPath ;
+                    }
+                }
+        }
         return $this->jsPaths ;
     }
 
     public function render(){
+        echo "<!DOCTYPE html>";
         echo "<html>" ;
         echo "<head>" ;
         echo "</head>" ;

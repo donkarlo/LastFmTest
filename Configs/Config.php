@@ -8,9 +8,9 @@ class Config {
 
     public function config() {
         ini_set('html_errors', false);
-        //Setting the path, windows users can usse both / and \ 
+        //Setting the path - @todo change to yours - win users separate with backslash and two backslashes at the end
         define('SITE_PATH', "/var/www/currentweb/BasicForBigCommerce/");
-        //Setting URL
+        //Setting URL - @todo change to yours
         define("URL", "http://localhost/currentweb/BasicForBigCommerce/");
         //Setting the domain
         define("DOMAIN", "localhost");

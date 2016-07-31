@@ -15,8 +15,9 @@ ul.pagination li a
 {
     display: block;
     background: #add8e6;
-    height: 20px;
-    width: 30px;
+    height: 3em;
+    width: 3em;
     border: 1px solid #77949d;
-    margin: 5px;
+    margin: 0.2em;
+    padding: 1em;
 }

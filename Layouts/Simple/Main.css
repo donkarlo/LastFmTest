@@ -1,8 +1,12 @@
 #simpleHeader{
     background:red;
+    color: white;
+    background: #563d7c;
     padding:30px;
 }
 #simpleFooter{
     background:green;
+    color: black;
     padding:30px;
+    background: #f7f7f7;
 }

@@ -1,9 +1,13 @@
 <?php
 namespace Modules\Lastfm\Models;
 use Modules\Lastfm\Models\Media;
+/**
+ * Mostely used to convert SimpleXMLElement data to prefered data type;
+ */
 class Util {
 
-    /** Returns the string value of a variable.
+    /** 
+     * Returns the string value of a variable.
      *
      * @param	mixed	$var	An object.
      * @return	string			A string.
@@ -15,7 +19,8 @@ class Util {
         return ($var && trim($var)) ? strval($var) : '';
     }
 
-    /** Returns the integer value of a variable.
+    /** 
+     * Returns the integer value of a variable.
      *
      * @param	mixed	$var	An object.
      * @return	integer			An integer.
@@ -27,7 +32,8 @@ class Util {
         return ($var && trim($var)) ? intval($var) : 0;
     }
 
-    /** Returns the floating-point value of a variable.
+    /** 
+     * Returns the floating-point value of a variable.
      *
      * @param	mixed	$var	An object.
      * @return	float			A floating-point number.
@@ -39,7 +45,8 @@ class Util {
         return ($var && trim($var)) ? floatval($var) : 0.0;
     }
 
-    /** Returns the boolean value of a variable.
+    /** 
+     * Returns the boolean value of a variable.
      *
      * @param	mixed	$var	An object.
      * @return	boolean			A boolean.
@@ -58,7 +65,8 @@ class Util {
         }
     }
 
-    /** Returns the unix timestamp value of a variable.
+    /** 
+     * Returns the unix timestamp value of a variable.
      *
      * @param	mixed	$var	An object.
      * @return	integer			A unix timestamp.
@@ -70,7 +78,8 @@ class Util {
         return ($var && trim($var)) ? strtotime(strval($var)) : 0;
     }
 
-    /** Returns the image type value of a variable.
+    /** 
+     * Returns the image type value of a variable.
      *
      * @param	mixed	$var	An object.
      * @return	integer			An image type.
@@ -97,7 +106,8 @@ class Util {
         }
     }
 
-    /** Converts any string or array of strings to UTF8.
+    /** 
+     * Converts any string or array of strings to UTF8.
      *
      * @param	mixed	$object	A String or an array.
      * @return	mixed			UTF8-string or array.
@@ -107,7 +117,7 @@ class Util {
      */
     public static function toUTF8($object) {
         if (is_array($object)) {
-            return array_map(array('Util', 'toUTF8'), $object);
+            return array_map(array('\Modules\Lastfm\Models\Util', 'toUTF8'), $object);
         }
         return mb_convert_encoding($object, "UTF-8", "auto");
     }

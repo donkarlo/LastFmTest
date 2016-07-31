@@ -2,15 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/var/www/currentweb/BasicForBigCommerce/Modules/Lastfm/Models/Track.php</file>
-            <file>file:/var/www/currentweb/BasicForBigCommerce/Tests/Modules/Lastfm/Models/ArtistTest.php</file>
-            <file>file:/var/www/currentweb/BasicForBigCommerce/Modules/Lastfm/Models/Geo.php</file>
-            <file>file:/var/www/currentweb/BasicForBigCommerce/Modules/Lastfm/Models/Callers/CallerFactory.php</file>
-            <file>file:/var/www/currentweb/BasicForBigCommerce/Modules/Lastfm/Views/Navlist.tpl</file>
-            <file>file:/var/www/currentweb/BasicForBigCommerce/Modules/Lastfm/Models/Callers/Caller.php</file>
-            <file>file:/var/www/currentweb/BasicForBigCommerce/Modules/Lastfm/Models/Artist.php</file>
-            <file>file:/var/www/currentweb/BasicForBigCommerce/Modules/Lastfm/Models/Media.php</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

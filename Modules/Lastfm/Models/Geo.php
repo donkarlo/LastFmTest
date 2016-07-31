@@ -4,10 +4,13 @@ namespace Modules\Lastfm\Models;
 
 use Modules\Lastfm\Models\Callers\CallerFactory;
 use Modules\Lastfm\Models\Artist;
-
+/**
+ * This class is responsiable to retrieve media based on geographical location.
+ */
 class Geo {
 
-    /** Get the most popular artists on last.fm by country.
+    /** 
+     * Get the most popular artists on last.fm by country.
      * @link http://www.last.fm/api/show/geo.getTopArtists
      * @param	string	country		Country name
      * @param int limit Number of the artists you want per page.
@@ -25,7 +28,7 @@ class Geo {
         ));
         $artists = array();
         foreach ($xml->children() as $artist) {
-            $artists[] = Artist::fromSimpleXMLElement($artist);
+            $artists[] = Artist::buildFromXml($artist);
         }
         return $artists;
     }

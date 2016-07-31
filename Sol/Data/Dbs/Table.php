@@ -5,7 +5,7 @@ namespace Sol\Data\Dbs ;
 /**
  * Description of Table
  *
- * @author Noondreams.com <web@noondreams.com>
+ * 
  */
 class Table
 {

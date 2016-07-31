@@ -1,11 +1,11 @@
 <?php
-session_start();
-
 /**
  * Configuration
  */
 require_once "Configs/Config.php";
 \Configs\Config::getInst()->config();
+
+require_once SITE_PATH."Sol/Core/Quickies.php" ;
 
 
 
