@@ -1,7 +1,9 @@
 <?php
 
 namespace Sol\Mvc\Controllers;
-
+/**
+ * This class is responsible to find path to controller and run an action of it with given arguments.
+ */
 abstract class Router {
 
     abstract protected function doAfterHdlReq();
