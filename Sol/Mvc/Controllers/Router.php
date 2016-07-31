@@ -54,57 +54,21 @@ abstract class Router {
     }
 
     public function hdlReq() {
-        if (strpos($this->reqStr, "Test/Test") === 0) {
-            if (strpos($this->reqStr, "Test/Test/Divide") === 0) {
-                $router = new \Modules\Test\Controllers\Router();
-                $this->ctrlObj = new \Modules\Test\Controllers\Test();
-
-                $argsStr = str_replace("Test/Test/Divide", "", $this->reqStr);
-                $argsStr = trim($argsStr, "/");
-
-                $this->actionArgs = explode("/", $argsStr);
-                try {
-                    $this->ctrlObj->Divide($this->actionArgs);
-                } catch (\Exception $error) {
-                    var_dump($error);
-                }
-            } elseif (strpos($this->reqStr, "Test/Test/IsObj") === 0) {
-                $this->ctrlObj = new \Modules\Test\Controllers\Test();
-
-                $argsStr = str_replace("Test/Test/IsObj", "", $this->reqStr);
-                $argsStr = trim($argsStr, "/");
-
-                $this->actionArgs = explode("/", $argsStr);
-                try {
-                    $this->ctrlObj->IsObj($this->actionArgs);
-                } catch (\Exception $error) {
-                    var_dump($error);
-                }
+        $this->doAfterHdlReq();
+        if (!empty($this->ctrlpath)) {
+            require_once $this->ctrlpath;
+            $ctrlClassName = $this->ctrlClassName;
+            $this->ctrlObj = new $ctrlClassName();
+            $actionName = $this->actionName;
+            $response = $this->ctrlObj->$actionName($this->actionArgs);
+            if ($response instanceof \Sol\Mvc\Views\Layout) {
+                $response->render();
             }
+        } else {
+            require_once SITE_PATH . 'Modules/Core/Controllers/Index.php';
+            $indexController = new \Index();
+            $indexController->Index();
         }
-        //If it didnt hit any of the above 
-        else {
-//            $controllerObj = new $className() ;
-//            $controllerObj->$action ($args) ;
-            $this->doAfterHdlReq();
-        }
-        require_once $this->ctrlpath;
-        $ctrlClassName = $this->ctrlClassName;
-        $this->ctrlObj = new $ctrlClassName();
-        $actionName = $this->actionName;
-        $response = $this->ctrlObj->$actionName($this->actionArgs);
-        if ($response instanceof \Sol\Mvc\Views\Layout) {
-            $response->render();
-        }
-    }
-
-    private function getActionName() {
-        if (is_null($this->actionName)) {
-            $result = str_replace($this->getCtrlPath(), "", $this->getReqStr());
-            $resExpl = explode("/", $result);
-            $this->actionName = $resExpl[0];
-        }
-        return $this->actionName;
     }
 
     protected function getReqStr() {

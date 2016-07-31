@@ -17,14 +17,13 @@ php cUrl must be installed.
 #Installation
 Simply clone this project to somewhere in your webserver's root or any of it's sub directories,
  then navigate to Configs/Configs.php and change /var/www/currentweb/BasicForBigCommerce/ 
+(note the slash at the end - backslashes for windows and double backslashes are needed at end in windows machines.)
 in line 12 to the path where you have extracted your cloned project.
 Then change http://localhost/currentweb/BasicForBigCommerce/ in line 14 to the address
- that points the path above. Then you can see the list of the top artists by adding 
-Lastfm/GeoArts/Navlist at the end of the address you have changed in line 14.
-(In both cases dont forget to add / at the end) Here is an example of what 
-you should run in browser's address bar: lets say you have changed line 14 
+that points the path above.(note slash at the end.)
+lets say you have changed line 14 
 to http://example.com/LastFmTest/ , to see the list of the top artists you should 
-run this address in your browser: http://example.com/LastFmTest/Lastfm/GeoArts/Navlist/ .
+run this address in your browser: http://example.com/LastFmTest/ and then click on "Take me to GeoArts" .
 
 #Tests
 Simply navigate to where you have extracted the cloned project and 
