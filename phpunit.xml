@@ -11,7 +11,6 @@
          syntaxCheck="false"
          bootstrap="Tests/bootstrap.php"
 >
-
     <testsuites>
         <testsuite name="Covering All available tests">
             <directory suffix=".php">./Tests</directory>

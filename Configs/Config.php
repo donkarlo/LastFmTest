@@ -8,10 +8,11 @@ class Config {
 
     public function config() {
         ini_set('html_errors', false);
+        //Setting the path, windows users can usse both / and \ 
         define('SITE_PATH', "/var/www/currentweb/BasicForBigCommerce/");
-
-//Setting URL
+        //Setting URL
         define("URL", "http://localhost/currentweb/BasicForBigCommerce/");
+        //Setting the domain
         define("DOMAIN", "localhost");
     }
 
@@ -24,16 +25,5 @@ class Config {
             self::$inst = new self();
         }
         return self::$inst;
-    }
-
-    /**
-     * 
-     * @return \Sol\Data\Dbs\Db
-     */
-    public function getDefaultDb() {
-        $dbConInfo = new \Sol\Data\Dbs\DbConInfo("localhost", "test", "root", "");
-        $conType = \Sol\Data\Dbs\Db::CON_TYPE_PDO;
-        $db = new \Sol\Data\Dbs\Db($dbConInfo, $conType);
-        return $db;
     }
 }
