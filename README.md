@@ -33,7 +33,7 @@ the phpunit will automatically run all the available tests in Tests directory
 or even the future tests you may add to this directory. If you want to add your 
 own tests, add them to Tests directory of the root of the project. 
 
-#How thing work under the hood:
+#What is happening under the hood?
 When in the browser's address bar you type http://example.com/LastFmTest/Lastfm/GeoArts/Navlist/spain/10
 and hit enter, the application will search inside Modules/Lastfm/Controllers for
 GeoArts file and runs Navlist with a given array argument like array(spain,10). 
