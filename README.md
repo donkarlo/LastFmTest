@@ -9,10 +9,10 @@ among the top artists of  a country and what are their top tracks.
 This application is a response to this problem.
 
 #Requierments
-Apache webserver 2.2 or above. 
-Apache webserver's mode rewrite must be enabled.
-Php 5.3 or above.
-php cUrl must be installed.
+Apache webserver 2.2 or above. <br/>
+Apache webserver's mode rewrite must be enabled.<br/>
+Php 5.3 or above.<br/>
+php cUrl must be installed.<br/>
 
 #Installation
 Simply clone this project to somewhere in your webserver's root or any of it's sub directories,
