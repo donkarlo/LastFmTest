@@ -1,7 +1,10 @@
 <?php
 
 namespace Sol\Mvc\Controllers ;
-
+/**
+ * This router finds it paths by directory navigation. 
+ * it ignores Modules and Controllers on it way to find the controller.
+ */
 class SimpleRouter extends \Sol\Mvc\Controllers\Router
 {
 
