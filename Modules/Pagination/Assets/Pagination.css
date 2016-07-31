@@ -1,0 +1,22 @@
+ul.pagination
+{
+    list-style: none;
+    text-align: center;
+    margin: 0 auto;
+}
+
+ul.pagination li
+{
+    display: inline;
+    float: left;
+}
+
+ul.pagination li a
+{
+    display: block;
+    background: #add8e6;
+    height: 20px;
+    width: 30px;
+    border: 1px solid #77949d;
+    margin: 5px;
+}
