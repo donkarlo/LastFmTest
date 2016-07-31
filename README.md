@@ -4,7 +4,9 @@
 This project is to list top artists by country and their top tracks feeded by Last.fm provided api. 
 
 #Motivation
-Interest in different countries music, makes us to be curious about who are among the top artists of  a country and what are their top tracks. This application is a response to this problem.
+Interest in different countries music, makes us to be curious about who are 
+among the top artists of  a country and what are their top tracks. 
+This application is a response to this problem.
 
 #Requierments
 Apache webserver 2.2 or above. 
@@ -65,7 +67,11 @@ I thought Front controller pattern would be the best for this application, since
 any chain of commands to get executed before a view is shown. Page controller was also fine but it seemed 
 to me too primitive. Since I had to recreate a whole MVC frame work quickly, I didn't have time to comment
 most of the code. I hope I have written the code enough self descriptive. I have just created something quick to
-cover the task, it is not something to be used in production at all.<br/>
+cover the task, it is not something to be used in production at all.
+The whole application could be done a lot simpler with something like Laravel. I though since 
+the assignment says "appropriate" it means additional unused services must not be contained in the framework. 
+Thats why I wrote this very basic framework.
+<br/>
 
 I hoped I could refactor classes like Lastfm/Models/Artist into a mapper like Lastfm/Mappers/Artist 
 which could hold the responsibility of creating an Artist class in Lastfm\Models as a domain model
